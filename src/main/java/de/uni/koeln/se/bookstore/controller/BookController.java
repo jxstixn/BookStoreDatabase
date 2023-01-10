@@ -57,7 +57,7 @@ public class BookController {
     }
 
     @GetMapping("/latest")
-    public ResponseEntity getLatestBook() {
+    public ResponseEntity<Book> getLatestBook() {
         if(bookService.checkSize()){
             return new ResponseEntity<>(bookService.fetchLatestBook(), HttpStatus.OK);
         }else{
